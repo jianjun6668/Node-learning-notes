@@ -10,7 +10,7 @@
 ```js
 const http=require('http'); //导入http模块
 
-var server=http.createServer(function (req, res){ ／／创建一个服务，服务里有一个回调函数，有两个参数
+var server=http.createServer(function (req, res){ //创建一个服务，服务里有一个回调函数，有两个参数
   //判断请求路径，返回相对应数据
   switch(req.url){
     case '/1.html':
