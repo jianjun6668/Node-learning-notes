@@ -3,10 +3,11 @@
 * http模块
 可以通过`http.createServer`创建一个服务，
 创建的服务里有一个回调函数，
-回调函数里有两个参数，分别是`request`，`response`，
+    回调函数里有两个参数，分别是`request`，`response`，
     `request` 是客户端想服务端发起的请求，里面有`url`,可以通过`request.url`访问到当前请求的路径<br>
     `response` 是服务端给客户端响应端数据，有`write`(向客户端发送端数据)方法和`end`方法。<br>
 <br>
+* 
 ```导入http模块
 const http=require('http');
 ```
