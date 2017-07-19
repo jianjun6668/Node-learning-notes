@@ -34,3 +34,79 @@ var server=http.createServer(function (req, res){
 //监听端口，此处的端口相当与去服务器找到你要访问的门牌
 server.listen(8888);
 ```
+
+监听事件
+
+```js
+//data——有一段数据到达(很多次)
+  var i=0;
+  req.on('data', function (data){
+    console.log(`第${i++}次收到数据`);
+  });
+
+  //end——数据请求完成(一次)
+  req.on('end', function (){
+  });
+```
+
+## node学习第二天：
+
+* fs模块
+
+fs模块主要用于读写服务器上的文件
+
+引入fs模块
+
+```js
+const fs=reqiure('fs');
+```
+
+`fs.readFile` 读取服务器上的文件
+
+```js
+fs.readFile('要读的文件名',function(err,data){
+  //err 读取错误返回的信息
+  //读取到的信息
+  })
+```
+fs.writeFile 写入文件
+
+```js
+fs.writeFile('要写入的文件名','写入的内容',function(err){
+  //err写入错误返回的信息
+  })
+```
+* querystring模块
+
+querystring模块主要用于解析url的数据，用于get请求回来的数据，`name="spring&age=18&sex="man" => {name:"spring",age:18,sex:"man"}`
+
+引入querystring模块
+
+```js
+const querystring=require('querystring')
+```
+
+解析数据
+
+```js
+var urldata='name="spring&age=18&sex="man"';
+querystring.parse(urldata); //{name:"spring",age:18,sex:"man"}
+```
+
+* url模块
+
+url模块主要用于解析前台返回的数据，常用于post请求。
+
+引入url模块
+
+```js
+const urllib=reqiure('url')
+```
+
+解析数据
+
+```js
+let clientobj=urlLib.parse(req.url, true) //加上默认false，加上true会对query进行转换
+clientobj.pathname //url路径
+clientobj.query //前台传过来的数据
+```
