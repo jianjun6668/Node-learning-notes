@@ -35,7 +35,7 @@ var server=http.createServer(function (req, res){
 server.listen(8888);
 ```
 
-监听事件
+监听事件（post请求）
 
 ```js
 //data——有一段数据到达(很多次)
