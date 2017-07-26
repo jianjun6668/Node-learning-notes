@@ -11,7 +11,7 @@ server.use(cookirSession({
   maxAge:2*60*60*1000 //cookie存在的事件
 }))
 server.use('/aaa/a.html', function (req, res){
-  console.log(req.cookirsession) //客户端返回的数据
+  console.log(req.session) //客户端返回的数据
   res.send({a:12}); //给客户端发送的数据
 });
 
