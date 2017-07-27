@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        <% include ./txt/style.css %>
+    </style>
+</head>
+<body>
+    <div>
+        我的名字是：<%= name %>
+    </div>
+    <% var json={age:18,sex:'man',like:['woman','play'],} %>
+    <p>
+        我今年：<%= json.age %> 岁
+    </p>
+    <p>
+        性别<%= json.sex%>
+    </p>
+    <ul>
+        <% for(let i=0;i<json.like.length;i++){%>
+            <li><%= json.like[i] %></li>
+        <%}%>
+    </ul>
+</body>
+</html>
